@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="114dp"
+        android:textSize="25sp"
+        android:text="@string/title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+    <EditText
+        android:id="@+id/eventTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:hint="Event Title"
+        android:minHeight="48dp"
+        android:text=""
+        android:textSize="14sp"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintWidth_percent="0.75"
+        />
+
+    <TextView
+        android:id="@+id/startDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:hint="Start Date"
+        android:minHeight="48dp"
+        android:text=""
+        android:textSize="14sp"
+        android:inputType="date"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eventTitle"
+        />
+
+    <TextView
+        android:id="@+id/startTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:hint="Start Time"
+        android:minHeight="48dp"
+        android:text=""
+        android:textSize="14sp"
+        android:inputType="datetime"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startDate"
+        />
+
+    <TextView
+        android:id="@+id/endDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:hint="End Date"
+        android:minHeight="48dp"
+        android:text=""
+        android:textSize="14sp"
+        android:inputType="date"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/startDate"
+        app:layout_constraintTop_toBottomOf="@id/eventTitle"
+        />
+
+    <TextView
+        android:id="@+id/endTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:hint="End Time"
+        android:minHeight="48dp"
+        android:text=""
+        android:textSize="14sp"
+        android:inputType="datetime"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/startTime"
+        app:layout_constraintTop_toBottomOf="@id/endDate"
+        />
+
+
+    <CheckBox
+        android:id="@+id/checkbox_isAllDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkboxIsAllDay"
+        android:onClick="onClickedIsAllDay"
+        app:layout_constraintTop_toBottomOf="@id/eventTitle"
+        app:layout_constraintStart_toEndOf="@id/endDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        />
+
+
+    <EditText
+        android:id="@+id/eventDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:hint="Event Description"
+        android:minHeight="48dp"
+        android:text=""
+        android:textSize="14sp"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startTime"
+        app:layout_constraintWidth_percent="0.9"
+        />
+
+    <EditText
+        android:id="@+id/emailOfInvitees"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:hint="Emails of Invitees"
+        android:minHeight="48dp"
+        android:text=""
+        android:textSize="14sp"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eventDescription"
+        app:layout_constraintWidth_percent="0.75"
+        />
+
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/accessType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:minHeight="48dp"
+        android:text="Private (off) \nPublic (on) "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailOfInvitees"
+        />
+
+
+    <Button
+        android:id="@+id/btnAddCalendarEvent"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/btnAddCalendarEvent"
+        app:layout_constraintStart_toEndOf="@id/accessType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailOfInvitees"
+        />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="395dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAddCalendarEvent"
+        />
+
+    <Button
+        android:id="@+id/btnCapturePhoto"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/btnCapturePhoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1"
+        />
+
+    <ImageView
+        android:id="@+id/imgCapturePic"
+        android:layout_width="160dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/image_border"
+        app:layout_constraintEnd_toStartOf="@id/btnCapturePhoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="395dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgCapturePic"
+        />
+
+    <EditText
+        android:id="@+id/txtNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="e.g. 6471231234"
+        android:minHeight="48dp"
+        android:text=""
+        android:textSize="14sp"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSendTextMessage"
+        app:layout_constraintTop_toBottomOf="@id/divider2"
+        />
+
+    <EditText
+        android:id="@+id/txtMsgContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:hint="Message Content"
+        android:minHeight="48dp"
+        android:text=""
+        android:textSize="14sp"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtNumber"
+        app:layout_constraintWidth_percent="0.8"
+        />
+
+    <Button
+        android:id="@+id/btnSendTextMessage"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/btnSendTextMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

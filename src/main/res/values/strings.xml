@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Assignment3_Intent</string>
+    <string name="title">Implicit Intent</string>
+    <string name="btnAddCalendarEvent">Add Calendar Event</string>
+    <string name="btnCapturePhoto">Capture Photo</string>
+    <string name="btnSendTextMessage">Send a Text Message</string>
+    <string name="btnOpenUrlInBrowser">Open URL in Browser</string>
+    <string name="checkboxIsAllDay">All Day Event</string>
+
+
+</resources>
